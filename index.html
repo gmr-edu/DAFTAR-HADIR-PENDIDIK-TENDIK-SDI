@@ -154,8 +154,24 @@
 
             <form onsubmit="submitUnifiedLogin(event)" class="space-y-3.5">
                 <div id="u-name-wrap">
-                    <label for="u-login-name" class="block text-xs font-extrabold text-blue-950 mb-1">Nama Lengkap Guru / Tendik</label>
-                    <input type="text" id="u-login-name" list="u-daftar-guru" autocomplete="off" placeholder="Ketik nama Anda (gelar boleh tidak diketik)" class="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-sky-50/40 focus:bg-white text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <label for="u-login-name" class="block text-xs font-extrabold text-blue-950 mb-1">Akun Belajar / Akun Pribadi</label>
+                    <input type="email" id="u-login-name" list="u-daftar-akun" autocomplete="off" placeholder="Masukkan email belajar.id atau akun pribadi..." class="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-sky-50/40 focus:bg-white text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <p class="text-[11px] text-slate-500 mt-1">Masuk menggunakan <b>akun belajar.id</b> atau <b>akun pribadi</b> yang ada di data (khusus <b>Bu Nur Ishmah</b> boleh mengetik akun pribadi yang digunakan).</p>
+                    <datalist id="u-daftar-akun">
+                        <option value="naily.magfiroh39@admin.sd.belajar.id">Naily Magfiroh, S.Pd., Gr.</option>
+                        <option value="gesit.muji5@guru.sd.belajar.id">Gesit Muji Rahayu, S.S., Gr.</option>
+                        <option value="sitiubaidah60@guru.sd.belajar.id">Siti Ubaidah, S.Pd.I., Gr.</option>
+                        <option value="hamidah813@guru.sd.belajar.id">Hamidah, S.Pd., Gr.</option>
+                        <option value="mariaholfah68@guru.sd.belajar.id">Mariah Olfah, S.Pd., Gr.</option>
+                        <option value="fhaizah721@guru.sd.belajar.id">Fhaizah, S.Pd.</option>
+                        <option value="ratna439@guru.sd.belajar.id">Ratna Sari, S.Pd., Gr.</option>
+                        <option value="siti99makiah@gmail.com">Siti Makiah, M.Pd.</option>
+                        <option value="radawiah354@gmail.com">Rabiatul Adawiah, S. Pd.</option>
+                        <option value="yuliana.hidayati49@admin.sd.belajar.id">Yuliana Hidayati, SE.</option>
+                        <option value="halimatus.sa14907@guru.sd.belajar.id">Halimatus Sa'diah, S.Pd., Gr.</option>
+                        <option value="siti.mariam06022003@guru.sd.belajar.id">Siti Mariam, S.Pd., Gr.</option>
+                        <option value="alpisahkira@gmail.com">Alpisah, S.Pd.</option>
+                    </datalist>
                     <datalist id="u-daftar-guru">
                         <option value="Siti Mariam, S.Pd., Gr."></option>
                         <option value="Siti Ubaidah, S.Pd.I., Gr."></option>
@@ -607,7 +623,7 @@
                             <span id="gps-status-icon" class="text-base">📍</span>
                             <div>
                                 <p id="gps-status-text" class="font-extrabold text-blue-950">Mendeteksi jarak lokasi Anda ke sekolah...</p>
-                                <p id="gps-status-sub" class="text-[11px] text-slate-600">Batas maksimal jarak absen Hadir: <b>500 meter</b> dari titik lokasi sekolah. Jika lebih dari 500 meter, tidak bisa absen.</p>
+                                <p id="gps-status-sub" class="text-[11px] text-slate-600">Batas maksimal jarak absen Hadir: <b>1 km (1.000 meter)</b> dari titik lokasi sekolah.</p>
                             </div>
                         </div>
                         <button type="button" onclick="refreshTeacherGpsStatus(true)" class="px-3 py-1.5 rounded-xl bg-white hover:bg-blue-100 text-blue-900 border border-blue-300 font-bold text-[11px] transition shrink-0">
@@ -616,7 +632,7 @@
                     </div>
 
                     <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-[11px] text-slate-500">⏰ Jam kedatangan &amp; kepulangan <b>terisi otomatis</b> sesuai waktu sekarang (WITA) &amp; radius lokasi maksimal <b>500 meter</b>. Jadwal absen: <b>Datang 07:00–08:00</b> | <b>Pulang 13:00–15:00</b> (<b>Jumat s.d. 12:00</b> &amp; <b>Sabtu 13:00–14:00 WITA</b>).</p>
+                        <p class="text-[11px] text-slate-500">⏰ Jam kedatangan &amp; kepulangan <b>terisi otomatis</b> sesuai waktu sekarang (WITA) &amp; radius lokasi maksimal <b>1 km</b>. Jadwal absen: <b>Datang mulai 07:00</b> | <b>Pulang Senin–Kamis 13:00–15:00</b>, <b>Jumat s.d. 11:30</b>, &amp; <b>Sabtu s.d. 13:30 WITA</b>.</p>
                         <button type="submit" id="quick-submit-btn" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-900 hover:to-blue-700 text-white font-extrabold text-sm shadow-md transition">
                             ✅ Simpan Kehadiran
                         </button>
@@ -837,10 +853,10 @@
 
                     <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-2.5">
                         <div class="flex items-center justify-between gap-2">
-                            <p class="text-xs font-extrabold text-emerald-950">📍 Titik Lokasi Sekolah &amp; Batas Jarak Absen (500 Meter)</p>
-                            <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold">Radius 500 m</span>
+                            <p class="text-xs font-extrabold text-emerald-950">📍 Titik Lokasi Sekolah &amp; Batas Jarak Absen (1 KM)</p>
+                            <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold">Radius 1.000 m</span>
                         </div>
-                        <p class="text-[11px] text-slate-600">Guru hanya dapat melakukan absen <b>Hadir</b> jika berada dalam radius maksimal <b>500 meter</b> dari titik koordinat sekolah ini (lebih dari 500 meter tidak bisa absen).</p>
+                        <p class="text-[11px] text-slate-600">Guru hanya dapat melakukan absen <b>Hadir</b> jika berada dalam radius maksimal <b>1 km (1.000 meter)</b> dari titik koordinat sekolah ini.</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-700 mb-0.5">Latitude Sekolah</label>
@@ -854,83 +870,6 @@
                         <button type="button" onclick="captureCurrentSchoolGps()" class="w-full py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-2xs transition flex items-center justify-center gap-1.5">
                             📡 Gunakan Lokasi GPS Saya Sekarang Sebagai Titik Sekolah
                         </button>
-                    </div>
-
-                    <div class="p-3.5 rounded-2xl bg-sky-50/80 border border-sky-200 space-y-2.5">
-                        <div class="flex items-center justify-between gap-2">
-                            <p class="text-xs font-extrabold text-blue-950">☁️ Sinkronisasi Database Cloud (Google Sheets / Apps Script)</p>
-                            <span id="cloud-sync-badge" class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-[10px] font-extrabold">Lokal</span>
-                        </div>
-                        <p class="text-[11px] text-slate-600">Tempelkan <b>URL Web App Google Apps Script</b> agar riwayat absen guru otomatis tersimpan di Google Sheets &amp; langsung terbaca di perangkat Admin secara online.</p>
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-700 mb-1">URL Web App Google Apps Script</label>
-                            <input type="url" id="setting-cloud-url" placeholder="https://script.google.com/macros/s/...../exec" class="w-full px-3 py-2 rounded-xl border border-sky-300 bg-white text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600">
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <button type="button" onclick="syncFromCloudNow(true)" class="flex-1 py-2 px-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-xs shadow-2xs transition">
-                                🔄 Tarik Data dari Cloud Sekarang
-                            </button>
-                            <button type="button" onclick="pushAllToCloudNow()" class="flex-1 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs shadow-2xs transition">
-                                ⬆️ Kirim Semua Data ke Cloud
-                            </button>
-                        </div>
-                        <details class="rounded-xl border border-sky-200 bg-white p-2.5 text-[11px] text-slate-600">
-                            <summary class="font-extrabold text-blue-900 cursor-pointer select-none">📋 Lihat Kode Google Apps Script (Klik untuk Salin)</summary>
-                            <p class="mt-2 mb-1.5">Buat Google Sheets baru → menu <b>Ekstensi → Apps Script</b> → tempel kode di bawah ini → klik <b>Terapkan (Deploy) → Aplikasi web</b> (Akses: <b>Siapa saja / Anyone</b>):</p>
-                            <pre id="apps-script-snippet" class="p-2 rounded-lg bg-slate-900 text-sky-200 text-[10px] overflow-x-auto select-all leading-relaxed">function doPost(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Absensi") || ss.insertSheet("Absensi");
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(["ID_Guru","Nama","Jabatan","Tanggal","Jam_Datang","Jam_Pulang","Status","Keterangan","Updated_At"]);
-  }
-  var payload = JSON.parse(e.postData.contents);
-  var items = Array.isArray(payload.records) ? payload.records : [payload];
-  var rows = sheet.getDataRange().getValues();
-  items.forEach(function(item) {
-    if (!item || !item.teacherId || !item.dateKey) return;
-    var foundRow = -1;
-    for (var i = 1; i &lt; rows.length; i++) {
-      if (String(rows[i][0]) === String(item.teacherId) &amp;&amp; String(rows[i][3]) === String(item.dateKey)) {
-        foundRow = i + 1;
-        break;
-      }
-    }
-    var rowValues = [
-      item.teacherId, item.name || "", item.role || "", item.dateKey,
-      item.timeIn || "", item.timeOut || "", item.status || "", item.note || "",
-      new Date().toISOString()
-    ];
-    if (foundRow &gt; 0) {
-      sheet.getRange(foundRow, 1, 1, rowValues.length).setValues([rowValues]);
-    } else {
-      sheet.appendRow(rowValues);
-      rows.push(rowValues);
-    }
-  });
-  return ContentService.createTextOutput(JSON.stringify({ status: "ok" })).setMimeType(ContentService.MimeType.JSON);
-}
-
-function doGet(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Absensi") || ss.getSheets()[0];
-  var values = sheet.getDataRange().getValues();
-  var out = [];
-  for (var i = 1; i &lt; values.length; i++) {
-    if (!values[i][0] || !values[i][3]) continue;
-    out.push({
-      teacherId: String(values[i][0]),
-      name: String(values[i][1] || ""),
-      role: String(values[i][2] || ""),
-      dateKey: String(values[i][3]),
-      timeIn: String(values[i][4] || ""),
-      timeOut: String(values[i][5] || ""),
-      status: String(values[i][6] || ""),
-      note: String(values[i][7] || "")
-    });
-  }
-  return ContentService.createTextOutput(JSON.stringify({ status: "ok", records: out })).setMimeType(ContentService.MimeType.JSON);
-}</pre>
-                        </details>
                     </div>
 
                     <div class="p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200 space-y-2.5">
@@ -987,8 +926,7 @@ function doGet(e) {
                 customLogoRight: "",
                 schoolLat: -3.409500,
                 schoolLng: 114.846800,
-                maxDistanceMeters: 500,
-                cloudSyncUrl: ""
+                maxDistanceMeters: 1000
             },
             teachers: [],
             records: {},
@@ -1025,8 +963,7 @@ function doGet(e) {
                     settings: {
                         ...defaultState.settings,
                         ...(parsed.settings || {}),
-                        adminPin: "Tahura*1028",
-                        maxDistanceMeters: 500
+                        adminPin: "Tahura*1028"
                     },
                     teachers: Array.isArray(parsed.teachers) ? parsed.teachers : [],
                     records: parsed.records && typeof parsed.records === "object" ? parsed.records : {},
@@ -1097,9 +1034,8 @@ function doGet(e) {
             }
         }
 
-        const ABSEN_IN_START_MINUTES = 7 * 60;  // 07:00
-        const ABSEN_IN_END_MINUTES = 8 * 60;    // 08:00
-        const MAX_ABSEN_DISTANCE_METERS = 500; // Batas jarak absen 500 meter
+        const ABSEN_IN_START_MINUTES = 7 * 60;  // 07:00 (mulai 07:00 tanpa batas akhir 08:00)
+        const MAX_ABSEN_DISTANCE_METERS = 1000; // Batas jarak absen 1 km (1.000 meter)
 
         function calculateDistanceMeters(lat1, lon1, lat2, lon2) {
             const R = 6371000; // Radius bumi dalam meter
@@ -1159,7 +1095,7 @@ function doGet(e) {
                     return {
                         ok: false,
                         distance: dist,
-                        message: `⛔ Jarak Anda ${formatDistanceLabel(dist)} dari sekolah. Batas maksimal absen adalah 500 meter (lebih dari 500 meter tidak bisa absen).`
+                        message: `⛔ Jarak Anda ${formatDistanceLabel(dist)} dari sekolah. Batas maksimal absen adalah 1 km (1.000 meter).`
                     };
                 }
                 return { ok: true, distance: dist };
@@ -1179,8 +1115,8 @@ function doGet(e) {
                 bar.className = "p-3 rounded-2xl bg-indigo-50 border border-indigo-200 flex flex-wrap items-center justify-between gap-2 text-xs";
                 if (iconEl) iconEl.textContent = "🛡️";
                 textEl.className = "font-extrabold text-indigo-950";
-                textEl.textContent = "Mode Admin Aktif (Pengecekan radius 500 meter dikecualikan untuk Admin)";
-                if (subEl) subEl.textContent = `Koordinat sekolah aktif: ${state.settings.schoolLat}, ${state.settings.schoolLng} (Batas guru: 500 meter)`;
+                textEl.textContent = "Mode Admin Aktif (Pengecekan radius 1 km dikecualikan untuk Admin)";
+                if (subEl) subEl.textContent = `Koordinat sekolah aktif: ${state.settings.schoolLat}, ${state.settings.schoolLng} (Batas guru: 1 km)`;
                 return;
             }
 
@@ -1193,7 +1129,7 @@ function doGet(e) {
                 bar.className = "p-3 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-wrap items-center justify-between gap-2 text-xs";
                 if (iconEl) iconEl.textContent = "✅";
                 textEl.className = "font-extrabold text-emerald-900";
-                textEl.textContent = `Lokasi Valid — Jarak Anda ${formatDistanceLabel(res.distance)} dari sekolah (di dalam batas 500 meter)`;
+                textEl.textContent = `Lokasi Valid — Jarak Anda ${formatDistanceLabel(res.distance)} dari sekolah (di dalam batas 1 km)`;
                 if (subEl) subEl.textContent = "Anda berada di dalam area yang diizinkan untuk melakukan absensi.";
                 if (showAlertToast) showToast(`✅ Lokasi valid (${formatDistanceLabel(res.distance)} dari sekolah).`);
             } else {
@@ -1201,7 +1137,7 @@ function doGet(e) {
                 if (iconEl) iconEl.textContent = "⛔";
                 textEl.className = "font-extrabold text-rose-800";
                 textEl.textContent = res.message.replace(/^⛔\s*/, "");
-                if (subEl) subEl.textContent = "Tidak bisa absen jika jarak lebih dari 500 meter dari sekolah atau GPS tidak aktif.";
+                if (subEl) subEl.textContent = "Absen Hadir ditolak jika jarak melebihi 1 km atau GPS tidak aktif.";
                 if (showAlertToast) showToast(res.message);
             }
         };
@@ -1212,12 +1148,12 @@ function doGet(e) {
             const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
             const dayIdx = d.getDay(); // 5 = Jumat, 6 = Sabtu
             if (dayIdx === 5) {
-                // Jumat: sampai jam 12:00
-                return { start: 11 * 60, end: 12 * 60, label: "sampai pukul 12:00", maxLabel: "12:00" };
+                // Jumat: sampai jam 11:30
+                return { start: 10 * 60 + 30, end: 11 * 60 + 30, label: "sampai pukul 11:30", maxLabel: "11:30" };
             }
             if (dayIdx === 6) {
-                // Sabtu: jam 13:00 sampai jam 14:00
-                return { start: 13 * 60, end: 14 * 60, label: "13:00 - 14:00", maxLabel: "14:00" };
+                // Sabtu: sampai jam 13:30
+                return { start: 12 * 60 + 30, end: 13 * 60 + 30, label: "sampai pukul 13:30", maxLabel: "13:30" };
             }
             // Senin - Kamis (dan default): jam 13:00 sampai jam 15:00
             return { start: 13 * 60, end: 15 * 60, label: "13:00 - 15:00", maxLabel: "15:00" };
@@ -1245,8 +1181,8 @@ function doGet(e) {
             if (isAdminUnlocked || !timeInStr) return "";
             const inMinutes = parseTimeToMinutes(timeInStr);
             if (inMinutes === null) return "";
-            if (inMinutes < ABSEN_IN_START_MINUTES || inMinutes > ABSEN_IN_END_MINUTES) {
-                return "⛔ Jam kedatangan hanya bisa diisi pukul 07:00 - 08:00 WITA.";
+            if (inMinutes < ABSEN_IN_START_MINUTES) {
+                return "⛔ Jam kedatangan hanya bisa diisi mulai pukul 07:00 WITA.";
             }
             return "";
         }
@@ -1291,24 +1227,24 @@ function doGet(e) {
                 return "⛔ Tanggal sudah lewat. Absen tidak bisa diisi atau diubah lagi; hubungi admin jika ada koreksi.";
             }
             if (field === "timeIn") {
-                if (n.minutes < ABSEN_IN_START_MINUTES || n.minutes > ABSEN_IN_END_MINUTES) {
-                    return "⛔ Absen jam kedatangan hanya dibuka pukul 07:00 - 08:00 WITA.";
+                if (n.minutes < ABSEN_IN_START_MINUTES) {
+                    return "⛔ Absen jam kedatangan hanya dibuka mulai pukul 07:00 WITA.";
                 }
             } else if (field === "timeOut") {
                 const win = getReturnWindowByDateKey(dateKey);
                 if (n.minutes < win.start || n.minutes > win.end) {
                     const partsDate = dateKey.split("-");
                     const dayName = getDayNameID(Number(partsDate[0]), Number(partsDate[1]) - 1, Number(partsDate[2]));
-                    return `⛔ Absen jam kepulangan hari ${dayName} hanya dibuka pukul ${win.label} WITA.`;
+                    return `⛔ Absen jam kepulangan hari ${dayName} hanya dibuka ${win.label} WITA.`;
                 }
             } else {
                 const win = getReturnWindowByDateKey(dateKey);
-                const inWindow = n.minutes >= ABSEN_IN_START_MINUTES && n.minutes <= ABSEN_IN_END_MINUTES;
+                const inWindow = n.minutes >= ABSEN_IN_START_MINUTES;
                 const outWindow = n.minutes >= win.start && n.minutes <= win.end;
                 if (!inWindow && !outWindow) {
                     const partsDate = dateKey.split("-");
                     const dayName = getDayNameID(Number(partsDate[0]), Number(partsDate[1]) - 1, Number(partsDate[2]));
-                    return `⛔ Di luar jam absen! Kedatangan: 07:00 - 08:00 WITA | Kepulangan hari ${dayName}: ${win.label} WITA.`;
+                    return `⛔ Di luar jam absen! Kedatangan: mulai 07:00 WITA | Kepulangan hari ${dayName}: ${win.label} WITA.`;
                 }
             }
             return "";
@@ -1330,11 +1266,11 @@ function doGet(e) {
             if (inEl) {
                 if (existingRec.timeIn) {
                     inEl.value = existingRec.timeIn;
-                } else if (n.minutes >= ABSEN_IN_START_MINUTES && n.minutes <= ABSEN_IN_END_MINUTES) {
+                } else if (n.minutes >= ABSEN_IN_START_MINUTES) {
                     inEl.value = nowStr;
                 } else {
                     inEl.value = "";
-                    inEl.placeholder = "07:00-08:00";
+                    inEl.placeholder = "Mulai 07:00";
                 }
             }
 
@@ -1636,143 +1572,6 @@ function doGet(e) {
             return teacher;
         }
 
-        function updateCloudBadgeUI() {
-            const badge = document.getElementById("cloud-sync-badge");
-            if (!badge) return;
-            const url = (state.settings.cloudSyncUrl || "").trim();
-            if (url) {
-                badge.textContent = "☁️ Cloud Aktif";
-                badge.className = "px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold";
-            } else {
-                badge.textContent = "Lokal";
-                badge.className = "px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 text-[10px] font-extrabold";
-            }
-        }
-
-        async function pushRecordToCloud(teacherId, dateKey) {
-            const url = (state.settings.cloudSyncUrl || "").trim();
-            if (!url) return;
-            const teacher = state.teachers.find(t => t.id === teacherId);
-            const rec = (state.records[teacherId] && state.records[teacherId][dateKey]) || {};
-            const payload = {
-                teacherId,
-                name: teacher ? teacher.name : "",
-                role: teacher ? teacher.role : "",
-                dateKey,
-                timeIn: rec.timeIn || "",
-                timeOut: rec.timeOut || "",
-                status: rec.status || "",
-                note: rec.note || ""
-            };
-            try {
-                await fetch(url, {
-                    method: "POST",
-                    mode: "no-cors",
-                    headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify(payload)
-                });
-            } catch (err) {}
-        }
-
-        window.pushAllToCloudNow = async function () {
-            const url = (document.getElementById("setting-cloud-url")?.value || state.settings.cloudSyncUrl || "").trim();
-            if (!url) {
-                showToast("⚠️ Masukkan URL Web App Google Apps Script terlebih dahulu.");
-                return;
-            }
-            state.settings.cloudSyncUrl = url;
-            saveState();
-            updateCloudBadgeUI();
-
-            const allItems = [];
-            state.teachers.forEach(t => {
-                const tRecs = state.records[t.id] || {};
-                Object.keys(tRecs).forEach(dk => {
-                    const r = tRecs[dk];
-                    if (r && (r.timeIn || r.timeOut || r.status || r.note)) {
-                        allItems.push({
-                            teacherId: t.id,
-                            name: t.name,
-                            role: t.role,
-                            dateKey: dk,
-                            timeIn: r.timeIn || "",
-                            timeOut: r.timeOut || "",
-                            status: r.status || "",
-                            note: r.note || ""
-                        });
-                    }
-                });
-            });
-
-            if (!allItems.length) {
-                showToast("ℹ️ Belum ada data absensi lokal untuk dikirim.");
-                return;
-            }
-            showToast(`⬆️ Mengirim ${allItems.length} data absensi ke Cloud...`);
-            try {
-                await fetch(url, {
-                    method: "POST",
-                    mode: "no-cors",
-                    headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify({ records: allItems })
-                });
-                showToast(`✅ ${allItems.length} data absensi berhasil dikirim ke Google Sheets!`);
-            } catch (err) {
-                showToast("⛔ Gagal mengirim data ke Cloud. Periksa koneksi internet & URL.");
-            }
-        };
-
-        window.syncFromCloudNow = async function (showAlert) {
-            const url = (document.getElementById("setting-cloud-url")?.value || state.settings.cloudSyncUrl || "").trim();
-            if (!url) {
-                if (showAlert) showToast("⚠️ Masukkan URL Web App Google Apps Script terlebih dahulu.");
-                return;
-            }
-            if (showAlert) showToast("🔄 Mengambil data absensi terbaru dari Cloud...");
-            try {
-                const res = await fetch(url);
-                const json = await res.json();
-                if (!json || !Array.isArray(json.records)) {
-                    if (showAlert) showToast("⚠️ Format respon Cloud tidak valid.");
-                    return;
-                }
-                let importedCount = 0;
-                json.records.forEach(item => {
-                    if (!item || !item.dateKey) return;
-                    let teacher = state.teachers.find(t => t.id === item.teacherId) ||
-                                  (item.name ? state.teachers.find(t => t.name.toLowerCase() === item.name.toLowerCase()) : null);
-                    if (!teacher && item.name) {
-                        teacher = {
-                            id: item.teacherId || ("t_" + Date.now() + "_" + Math.random().toString(36).slice(2, 6)),
-                            name: item.name,
-                            role: item.role || "Guru / Tenaga Pendidik"
-                        };
-                        state.teachers.push(teacher);
-                    }
-                    if (!teacher) return;
-                    if (!state.records[teacher.id]) state.records[teacher.id] = {};
-                    state.records[teacher.id][item.dateKey] = {
-                        timeIn: item.timeIn || "",
-                        timeOut: item.timeOut || "",
-                        status: item.status || "",
-                        note: item.note || ""
-                    };
-                    importedCount++;
-                });
-                saveState();
-                refreshTeacherDropdowns();
-                renderQuickRecentList();
-                renderTeacherSheet();
-                if (!document.getElementById("view-admin").classList.contains("hidden")) {
-                    renderAdminDashboard();
-                    populateAdminManageTab();
-                }
-                if (showAlert) showToast(`✅ Berhasil menyinkronkan ${importedCount} catatan dari Cloud!`);
-            } catch (err) {
-                if (showAlert) showToast("⛔ Gagal menarik data dari Cloud. Pastikan akses Web App diatur ke 'Anyone'.");
-            }
-        };
-
         function setRecord(teacherId, dateKey, patch) {
             if (!state.records[teacherId]) state.records[teacherId] = {};
             const existing = state.records[teacherId][dateKey] || {
@@ -1782,7 +1581,6 @@ function doGet(e) {
                 note: ""
             };
             state.records[teacherId][dateKey] = { ...existing, ...patch };
-            pushRecordToCloud(teacherId, dateKey);
         }
 
         window.submitQuickAttendance = async function (e) {
@@ -1817,7 +1615,7 @@ function doGet(e) {
                 if (!timeIn && !timeOut) {
                     const win = getReturnWindowByDateKey(dateKeyCheck);
                     const dayName = getDayNameID(year, month, day);
-                    showToast(`⛔ Jam kedatangan (07:00 - 08:00) atau kepulangan hari ${dayName} (${win.label}) belum waktunya.`);
+                    showToast(`⛔ Jam kedatangan (mulai 07:00) atau kepulangan hari ${dayName} (${win.label}) belum waktunya.`);
                     return;
                 }
                 const arrivalLimitMsg = validateArrivalTimeLimit(dateKeyCheck, timeIn);
@@ -1834,7 +1632,7 @@ function doGet(e) {
                 const submitBtn = document.getElementById("quick-submit-btn");
                 if (submitBtn) {
                     submitBtn.disabled = true;
-                    submitBtn.textContent = "⏳ Memeriksa Jarak GPS (Maks. 500 m)...";
+                    submitBtn.textContent = "⏳ Memeriksa Jarak GPS (Maks. 1 km)...";
                 }
                 const gpsCheck = await verifyTeacherWithinRadius();
                 if (submitBtn) {
@@ -1958,7 +1756,7 @@ function doGet(e) {
                 showToast(limitMsg);
                 return;
             }
-            showToast("⏳ Memeriksa jarak GPS (maks. 500 m)...");
+            showToast("⏳ Memeriksa jarak GPS (maks. 1 km)...");
             const gpsCheck = await verifyTeacherWithinRadius();
             refreshTeacherGpsStatus(false);
             if (!gpsCheck.ok) {
@@ -2208,9 +2006,6 @@ function doGet(e) {
                 btnGuru.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-700/70 hover:bg-blue-600 text-white border border-blue-400/30 transition";
                 renderAdminDashboard();
                 populateAdminManageTab();
-                if (state.settings.cloudSyncUrl) {
-                    syncFromCloudNow(false);
-                }
             }
         };
 
@@ -2560,9 +2355,6 @@ function doGet(e) {
             if (pinEl) pinEl.value = "Tahura*1028";
             if (latEl) latEl.value = state.settings.schoolLat ?? -3.409500;
             if (lngEl) lngEl.value = state.settings.schoolLng ?? 114.846800;
-            const cloudEl = document.getElementById("setting-cloud-url");
-            if (cloudEl) cloudEl.value = state.settings.cloudSyncUrl || "";
-            updateCloudBadgeUI();
 
             const listEl = document.getElementById("admin-teacher-manage-list");
             if (!listEl) return;
@@ -2597,9 +2389,9 @@ function doGet(e) {
                 if (lngEl) lngEl.value = lng;
                 state.settings.schoolLat = lat;
                 state.settings.schoolLng = lng;
-                state.settings.maxDistanceMeters = 500;
+                state.settings.maxDistanceMeters = 1000;
                 saveState();
-                showToast(`✅ Koordinat sekolah diperbarui (${lat}, ${lng}) • Batas radius 500 meter.`);
+                showToast(`✅ Koordinat sekolah diperbarui (${lat}, ${lng}) • Batas radius 1 km.`);
             } catch (err) {
                 showToast(`⛔ ${err.message}`);
             }
@@ -2620,19 +2412,13 @@ function doGet(e) {
                 state.settings.schoolLat = latVal;
                 state.settings.schoolLng = lngVal;
             }
-            state.settings.maxDistanceMeters = 500;
-            const cloudUrlVal = (document.getElementById("setting-cloud-url")?.value || "").trim();
-            state.settings.cloudSyncUrl = cloudUrlVal;
-            updateCloudBadgeUI();
+            state.settings.maxDistanceMeters = 1000;
 
             saveState();
-            if (cloudUrlVal) {
-                syncFromCloudNow(false);
-            }
             applySchoolBranding();
             renderAdminDashboard();
             refreshTeacherGpsStatus(false);
-            showToast("💾 Pengaturan sekolah & batas jarak 500 meter berhasil disimpan!");
+            showToast("💾 Pengaturan sekolah & batas jarak 1 km berhasil disimpan!");
         };
 
         window.adminAddTeacher = function (e) {
@@ -2718,8 +2504,12 @@ function doGet(e) {
             "Halimatus Sa'diah, S.Pd., Gr.",
             "Ratna Sari, S.Pd., Gr.",
             "Naily Magfiroh, S.Pd., Gr.",
+            "Siti Makiah, M.Pd.",
+            "Fhaizah, S.Pd.",
+            "Alpisah, S.Pd.",
             "Rabiatul Adawiah, S. Pd.",
-            "Yuliana Hidayati, SE."
+            "Yuliana Hidayati, SE.",
+            "Nur Ishmah, S.Pd."
         ];
 
         function nameKey(v) {
@@ -2866,10 +2656,6 @@ function doGet(e) {
             if (sessionTeacher && !findAllowedTeacher(sessionTeacher)) {
                 sessionTeacher = "";
                 try { sessionStorage.removeItem(SESSION_KEY); } catch (err) {}
-            }
-            updateCloudBadgeUI();
-            if (state.settings.cloudSyncUrl) {
-                syncFromCloudNow(false);
             }
             if (sessionTeacher) {
                 document.getElementById("login-overlay").classList.add("hidden");
@@ -4200,22 +3986,25 @@ function doGet(e) {
         let unifiedTarget = 'absen';
         let portalSession = null;
 
-        const UNIFIED_TEACHERS = [
-            "Siti Mariam, S.Pd., Gr.",
-            "Siti Ubaidah, S.Pd.I., Gr.",
-            "Hamidah, S.Pd., Gr.",
-            "Gesit Muji Rahayu, S.S., Gr.",
-            "Mariah Olfah, S.Pd., Gr.",
-            "Halimatus Sa'diah, S.Pd., Gr.",
-            "Ratna Sari, S.Pd., Gr.",
-            "Naily Magfiroh, S.Pd., Gr.",
-            "Siti Makiah, M.Pd.",
-            "Fhaizah, S.Pd.",
-            "Alpisah, S.Pd.",
-            "Rabiatul Adawiah, S. Pd.",
-            "Yuliana Hidayati, SE.",
-            "Nur Ishmah, S.Pd."
+        const UNIFIED_TEACHER_ACCOUNTS = [
+            { name: "Naily Magfiroh, S.Pd., Gr.", email: "naily.magfiroh39@admin.sd.belajar.id" },
+            { name: "Gesit Muji Rahayu, S.S., Gr.", email: "gesit.muji5@guru.sd.belajar.id" },
+            { name: "Siti Ubaidah, S.Pd.I., Gr.", email: "sitiubaidah60@guru.sd.belajar.id" },
+            { name: "Hamidah, S.Pd., Gr.", email: "hamidah813@guru.sd.belajar.id" },
+            { name: "Mariah Olfah, S.Pd., Gr.", email: "mariaholfah68@guru.sd.belajar.id" },
+            { name: "Fhaizah, S.Pd.", email: "fhaizah721@guru.sd.belajar.id" },
+            { name: "Ratna Sari, S.Pd., Gr.", email: "ratna439@guru.sd.belajar.id" },
+            { name: "Siti Makiah, M.Pd.", email: "siti99makiah@gmail.com" },
+            { name: "Nur Ishmah, S.Pd.", email: "", allowCustomEmail: true },
+            { name: "Rabiatul Adawiah, S. Pd.", email: "radawiah354@gmail.com" },
+            { name: "Yuliana Hidayati, SE.", email: "yuliana.hidayati49@admin.sd.belajar.id" },
+            { name: "Halimatus Sa'diah, S.Pd., Gr.", email: "halimatus.sa14907@guru.sd.belajar.id" },
+            { name: "Siti Mariam, S.Pd., Gr.", email: "siti.mariam06022003@guru.sd.belajar.id" },
+            { name: "Alpisah, S.Pd.", email: "alpisahkira@gmail.com" }
         ];
+
+        const UNIFIED_TEACHERS = UNIFIED_TEACHER_ACCOUNTS.map(t => t.name);
+        const ISHMAH_CUSTOM_EMAIL_KEY = "sdi_ishmah_custom_email_v1";
 
         function uNormText(v) {
             return String(v || '').toLowerCase().replace(/[\u2018\u2019`\u00b4]/g, "'").replace(/[^a-z0-9]/g, '');
@@ -4225,7 +4014,34 @@ function doGet(e) {
             return String(v || '').replace(/\s+/g, '').toLowerCase();
         }
 
+        function isValidEmailFormat(val) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(val || '').trim());
+        }
+
+        function resolveUnifiedAccount(input) {
+            const raw = String(input || '').trim();
+            const lowerEmail = raw.toLowerCase();
+            if (!lowerEmail) return null;
+
+            const exactAcc = UNIFIED_TEACHER_ACCOUNTS.find(t => t.email && t.email.toLowerCase() === lowerEmail);
+            if (exactAcc) {
+                return { name: exactAcc.name, email: exactAcc.email };
+            }
+
+            if (isValidEmailFormat(lowerEmail)) {
+                const savedIshmahEmail = (localStorage.getItem(ISHMAH_CUSTOM_EMAIL_KEY) || '').toLowerCase();
+                if (!savedIshmahEmail || savedIshmahEmail === lowerEmail || lowerEmail.includes('ishmah') || lowerEmail.includes('ismah')) {
+                    localStorage.setItem(ISHMAH_CUSTOM_EMAIL_KEY, lowerEmail);
+                    return { name: "Nur Ishmah, S.Pd.", email: lowerEmail };
+                }
+            }
+
+            return null;
+        }
+
         function resolveUnifiedTeacher(input) {
+            const byEmail = resolveUnifiedAccount(input);
+            if (byEmail) return byEmail.name;
             const full = uNormText(input);
             const base = uNormText(String(input || '').split(',')[0]);
             if (base.length < 3) return '';
@@ -4491,21 +4307,22 @@ function doGet(e) {
                 }
                 portalSession = { role: 'admin', name: 'Admin / Piket', pass: pass.trim() };
             } else {
-                const rawName = document.getElementById('u-login-name').value.replace(/\s+/g, ' ').trim();
-                if (!rawName) {
-                    showUnifiedError('Nama lengkap wajib diisi.');
+                const rawAccount = document.getElementById('u-login-name').value.replace(/\s+/g, ' ').trim();
+                if (!rawAccount) {
+                    showUnifiedError('Akun belajar atau akun pribadi wajib diisi.');
                     return;
                 }
-                const officialName = resolveUnifiedTeacher(rawName);
-                if (!officialName) {
-                    showUnifiedError('Nama tidak terdaftar dalam daftar pendidik.');
+                const accountInfo = resolveUnifiedAccount(rawAccount);
+                if (!accountInfo) {
+                    showUnifiedError('Akun tidak terdaftar di data pendidik & tendik (khusus Bu Nur Ishmah dapat mengetik akun pribadi yang digunakan).');
                     return;
                 }
+                const officialName = accountInfo.name;
                 if (!verifyTeacherCredential(officialName, pass)) {
                     showUnifiedError('Password salah!');
                     return;
                 }
-                portalSession = { role: 'guru', name: officialName, pass: pass };
+                portalSession = { role: 'guru', name: officialName, email: accountInfo.email, pass: pass };
             }
 
             document.getElementById('u-login-error').classList.add('hidden');
